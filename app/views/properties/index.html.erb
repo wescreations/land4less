@@ -14,7 +14,7 @@
          <%= form_for "", url: properties_path, role: "search", method: "get" do %> 
          <%= search_form_for @q do |f| %>
          <%= f.search_field :name_cont, :placeholder => "Search by name...", :class => "wide_inputs" %><br><br>
-         <%= f.select :state_cont, [" ", "Arizona","Texas","California", "New Mexico"], {prompt: "Choose a State..." }, { class: "wide_inputs longtoo"} %><br><br>
+         <%= f.select :state_cont, [" ", "Arizona","Texas","California", "New Mexico", "Nevada"], {prompt: "Choose a State..." }, { class: "wide_inputs longtoo"} %><br><br>
          <%= f.select :monthly_payment_cont, [" ", "$129 Per Month","$229 Per Month","$329 Per Month", "$429 Per Month"], {prompt: "Choose a Montly Payment"}, { class: "wide_inputs"} %><br><br>
       </div>
       <div class="half">
