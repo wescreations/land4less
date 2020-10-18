@@ -64,9 +64,12 @@
                   <br>
                </div>
                <div class="row">
-                  <%= link_to("DETAILS", property_path(p), :class => 'primary_button') %> <br><Br>       
-                  <%= link_to('EDIT', edit_property_path(p), :class => 'danger_button') %> <br><Br>
-                  <%= link_to('DELETE', delete_property_path(p), :class => 'success_button') %>
+
+                  <%= link_to("DETAILS", property_path(p), :class => 'primary_button') %> <br><Br>      
+                  <% if user_signed_in? %> 
+                     <%= link_to('EDIT', edit_property_path(p), :class => 'danger_button') %> <br><Br>
+                     <%= link_to('DELETE', delete_property_path(p), :class => 'success_button') %> 
+                  <% end %> 
                </div>
             </div>
          </div>

@@ -1,6 +1,8 @@
 class PropertiesController < ApplicationController
   
 
+before_action :authenticate_user!, :only => [:new, :delete, :destroy, :create, :update, :edit]
+
 layout 'application'
 
   def new
@@ -8,6 +10,7 @@ layout 'application'
   end
 
   def create
+ 
   	@property = Property.new(properties_params)
   	if @property.save
 
