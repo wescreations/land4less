@@ -1,0 +1,243 @@
+
+<!-- Page Content -->
+
+
+   <div class="container">
+      <%= image_tag @property.main_photo, :class => "swipebox" %> 
+      <div class="row">
+         <div class="col-sm-12">
+            <h1 class="mt-4"><%= @property.name   %></h1>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-1">
+            <strong>
+               <p>Price: </p>
+            </strong>
+         </div>
+         <div class="col-sm-8">
+            <p ><%= @property.price   %></p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-1">
+            <strong>
+               <p>Size: </p>
+            </strong>
+         </div>
+         <div class="col-sm-8">
+         	 <%= property_size(@property.size) %> 
+
+         </div>
+      </div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+         <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
+         </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Photos</a>
+         </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Parcel</a>
+         </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab-2" data-toggle="tab" href="#profile-2" role="tab" aria-controls="profile-2" aria-selected="false">Location Map</a>
+         </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab-2" data-toggle="tab" href="#contact-2" role="tab" aria-controls="contact-2" aria-selected="false">Contact Owner</a>
+         </li>
+         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab-3" data-toggle="tab" href="#profile-3" role="tab" aria-controls="profile-3" aria-selected="false">Land Details</a>
+         </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+         <div class="tab-pane fade show active border_box" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Address: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.address_1   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Address 2: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.address_2   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>City: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.city   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>State: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.state   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Zip: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.zip   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>APN: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.apn   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Monthly Payment: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.monthly_payment   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Description: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.description   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Latitude: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.lat   %></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-1">
+                  <strong>
+                     <p>Longitude: </p>
+                  </strong>
+               </div>
+               <div class="col-sm-8">
+                  <p ><%= @property.long   %></p>
+               </div>
+            </div>
+         </div>
+
+         <div class="tab-pane fade border_box" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="slideshow-container">
+               <% if @property.photos.attached? == true %>
+               <!--  -->
+               <% @property.photos.each do |p| %>
+               <div class="mySlides fade show">
+                  <%= image_tag(p, size: "650x450") %> 
+               </div>
+               <% end %> 
+               <% end %> 
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+         </div>
+         <div class="tab-pane fade border_box" id="contact" role="tabpanel" aria-labelledby="contact-tab">parcel</div>
+         <div class="tab-pane fade border_box" id="profile-2" role="tabpanel" aria-labelledby="profile-tab-2">
+               	<div id="map"></div>
+
+
+         </div>
+         <div class="tab-pane fade border_box" id="contact-2" role="tabpanel" aria-labelledby="contact-tab-2">
+            <p>Contact Us Page</p>
+            <p>(BILLING AND MONTHLY PAYMENT ADDRESS: Land4Less 18521 E Queen Creek Rd Suite 105-502 Queen Creek, AZ 85142)</p>
+            <p>Contact Name: Land4Less Team</p>
+            <p>Contact Number (855) LAND4LESS (855-526-3453)</p>
+            <p>Contact Number (480) 987-1048 (OPEN M-F 9AM-5PM PST)</p>
+            <p>Contact Email info@Land4Less.us</p>
+            <p>Physical Address of Office: 2705 S. Alma School Road Suite 11 Chandler, AZ 85286</p>
+         	<% lat = @property.lat %> 
+   	<% long = @property.long %> 
+
+   	<%= puts lat  %> 
+         </div>
+         <div class="tab-pane fade border_box" id="profile-3" role="tabpanel" aria-labelledby="profile-tab-3">
+
+         </div>
+      </div>
+   </div>
+
+
+
+   </div>
+   <!-- /.container -->
+   <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      let map;
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: <%= @property.lat %> , lng: <%= @property.long %>  },
+    zoom: 13,
+  });
+   new google.maps.Marker({
+    position: { lat: <%= @property.lat %> , lng: <%= @property.long %>  },
+    map,
+    title: "Hello World!",
+  });
+
+}
+   </script>

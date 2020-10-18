@@ -1,0 +1,377 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'test.css';
+  @import 'font_awesome_buttons.css';
+@import 'new_slider.css';
+
+
+h1, h2, h3, h4, h5 {
+    font-family: montserrat;
+    color: #008ABE;
+}
+
+h5, h6, h4 {
+	font-weight: 600;
+}
+
+
+
+p {
+    font-family: work sans;
+}
+
+.primary_button {
+	background-color: #008ABE !important;
+  border-radius: 1px !important;
+  color: white !important;
+  border: solid 2px white !important;
+      font-family: montserrat;
+  padding: 7px;
+  text-decoration: none; 
+}
+
+.primary_button:hover {
+  background-color: white !important;
+  border-radius: 1px !important;
+  color:#008ABE !important;
+  border: solid 2px  #008ABE !important;
+        font-family: montserrat;
+        padding: 7px;
+ transition: all .5s ease-in-out;
+ text-decoration: none; 
+}
+
+.danger_button {
+  background-color: #005173 !important;
+  border-radius: 1px !important;
+  color: white !important;
+  border: solid 2px white !important;
+      font-family: montserrat;
+  padding: 7px;
+  text-decoration: none; 
+}
+
+.danger_button:hover {
+    background-color: white !important;
+  border-radius: 1px !important;
+  color: #005173 !important;
+  border: solid 2px  #005173 !important;
+      font-family: montserrat;
+  padding: 7px;
+transition: all .5s ease-in-out;
+text-decoration: none; 
+}
+
+.success_button {
+  background-color: #005173 !important;
+  border-radius: 1px !important;
+  color: white !important;
+  border: solid 2px white !important;
+      font-family: montserrat;
+  padding: 7px;
+  text-decoration: none; 
+}
+
+.success_button:hover {
+    background-color: white !important;
+  border-radius: 1px !important;
+  color: #005173 !important;
+  border: solid 2px  #005173 !important;
+      font-family: montserrat;
+  padding: 7px;
+transition: all .5s ease-in-out;
+text-decoration: none; 
+}
+
+
+.btn-danger {
+
+}
+
+.btn-success {
+
+}
+
+a .btn-danger {
+ color: lightgray !important;
+}
+
+.long {
+	width: 259px !important;
+}
+
+input {
+	        width: 259px !important;
+}
+
+    select:focus {
+        min-width: 259px !important;
+        width: auto !important;
+    }
+
+    select {
+        width: 259px !important;
+    }
+    select:focus {
+        min-width: 259px !important;
+        width: auto !important;
+    }
+
+
+.boxy {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.border_box {
+border: solid .5px lightgray;
+padding: 20px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;  
+}
+
+.three_twelve {
+  width: 17%;
+  border: solid 1px gray;
+  border-radius: 5px;
+
+}
+
+.six_twelve {
+  width: 63%;
+  border-radius: 5px;
+
+}
+
+.half {
+  width: 32%;
+  border-radius: 5px;
+
+}
+
+.bg {
+	 background-image: url(LAND.jpg);
+  height: 390px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.container2 {
+  padding: 30px;
+}
+
+.wide_inputs {
+  width: 90% !important;
+  height: 50px;
+  border: solid 1px #008ABE;
+  background-color: white;
+  opacity: .9; 
+  border-radius: 1px; 
+color: black;
+margin-left: 30px;
+margin-right: 10px;
+padding: 5px;
+}
+
+.form_inputs {
+  width: 90% !important;
+  height: 50px;
+  border: solid 1px #008ABE;
+  background-color: white;
+  border-radius: 1px; 
+color: black;
+margin-right: 10px;
+padding: 5px;
+}
+
+.wide_buttons {
+  width: 90% !important;
+  height: 50px;
+  border: solid 2px white;
+  background-color: #008ABE;
+  border-radius: 3px; 
+color: white;
+margin-left: 30px;
+margin-right: 10px;
+
+}
+
+.wide_buttons:hover {
+  width: 90% !important;
+  height: 50px;
+  border: solid 2px #008ABE;
+  background-color: white;
+  border-radius: 3px; 
+color: #008ABE;
+margin-left: 30px;
+margin-right: 10px;
+ transition: all .5s ease-in-out;
+}
+
+.wide_buttons2 {
+  width: 90% !important;
+  height: 50px;
+  border: solid 2px white;
+  background-color: #008ABE;
+  border-radius: 3px; 
+color: white;
+
+}
+
+.wide_buttons2:hover {
+  width: 90% !important;
+  height: 50px;
+  border: solid 2px #008ABE;
+  background-color: white;
+  border-radius: 3px; 
+color: #008ABE;
+ transition: all .5s ease-in-out;
+}
+
+.footertext {
+  color: white;
+  text-align: center;
+}
+
+.footerheader {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cardy {
+  width: 100%;
+  border-radius: 5px; 
+  height: 200px;
+  border: solid 1px gray;
+}
+
+.banner {
+  border: solid 1px blue
+  width: 380px;
+  border-radius: 1px;
+  background-color: white;
+  opacity: .8; 
+  margin-top: 8%;
+  padding: 5px 20px;
+  margin-left: 15px;
+
+}
+
+.boxy2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+ border-radius: 1px; 
+ border: solid .75px gray;
+ width: 100%;
+}
+
+.btn {
+	border-radius: 5px !important;
+}
+
+
+.card {
+border-radius: 1px !important;
+  -webkit-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  -moz-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+ transition: all .2s ease-in-out;
+ height: auto;
+}
+
+.card:hover {
+	-webkit-box-shadow: -1px 3px 29px 4px  rgba(138,138,138,0.35) !important;
+  -moz-box-shadow: -1px 3px 29px 4px rgba(138,138,138,0.35) !important;
+   box-shadow: -1px 3px 29px 4px rgba(138,138,138,0.35) !important;
+   transform: scale(1.05);
+   border: 1px lightgray solid !important;
+}
+
+
+
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+    border-radius: 3px }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #008ABE;
+    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;
+    border-radius: 3px;
+    color: #008ABE;
+    border: 1px solid #008ABE; 
+    padding: 10px 20px 10px 20px;}
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      background-color: lightgray;
+      border-color: #000033; 
+      opacity: .5;
+      } 
+
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; 
+    padding: 10px 15px 10px 15px;
+    border-radius: 3px}
+
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+ }
+
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
+
+
+
+#map {
+  height: 100%;
+  width: 100%;
+  height: 300px;
+}

@@ -1,0 +1,2 @@
+module MakeOfferHelper
+end

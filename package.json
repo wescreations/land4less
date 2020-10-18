@@ -1,0 +1,22 @@
+{
+  "name": "tet",
+  "private": null,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.3.0",
+    "@staaky/fresco": "^2.3.1",
+    "jquery": "^3.5.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "2",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  },
+  "description": "2",
+  "main": "2",
+  "repository": "2",
+  "author": "2",
+  "license": "2"
+}
