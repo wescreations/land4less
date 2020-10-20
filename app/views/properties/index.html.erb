@@ -1,4 +1,5 @@
 <!-- Page Content -->
+<br><br><br><br>
 <div class="bg">
    <div class="row">
       <div class="col-sm-6">
@@ -56,7 +57,7 @@
                </div>
                <div class="row">
                   <strong>
-                     <p class="card-text ml-3">Description:</p>
+                     <p class=" card-text ml-3">Description:</p>
                   </strong>
                   <div class="ml-3">
                      <%= truncate(p.description, :length => 75) %> 
@@ -78,70 +79,16 @@
             <%= will_paginate @property %>
          </div>
       </div>
-      <div class="three_twelve ml-1" style="padding: 15px;">
-         <h3>Contact Us</h3>
-         <form action="/action_page.php">
-            <label for="fname">First name:</label><br>
-            <input class="form_inputs"type="text" id="fname" name="fname" value="John" style="width: 120px;"><br>
-            <label for="lname">Last name:</label><br>
-            <input class="form_inputs"type="text" id="lname" name="lname" value="Doe" style="width: 120px;"><br><br>
-            <input class="wide_buttons2"type="submit" value="S U B M I T" style="width: 150px;">
-         </form>
+      <div class="three_twelve ml-1" style="padding: 15px; background-color: white;">
+         <%= render(:partial => 'properties/right') %> 
       </div>
    </div>
    <br>
 </div>
-<div class="container2">
-   <div class="row">
-      <div class="three_twelve mr-1" style="border: none;">
-      </div>
-      <div class="six_twelve ml-1 mr-1 row">
-         <div class="row">
-            <div class="card-group" style="margin-left: auto; margin-right: auto;">
-               <div class="card" style="padding: 15px; width: auto; margin-right: 10px;">
-                  <div class="card-body">
-                     <h5 class="card-title">Card title</h5>
-                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-               </div>
-               <div class="card" style="padding: 15px; width: auto; margin-right: 10px;">
-                  <div class="card-body">
-                     <h5 class="card-title">Card title</h5>
-                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-               </div>
-               <div class="card" style="padding: 15px; width: auto; margin-right: 10px;">
-                  <div class="card-body">
-                     <h5 class="card-title">Card title</h5>
-                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <br><br>
-   </div>
-</div>
-<div class="container2">
-   <div class="row">
-      <div class="three_twelve mr-1" style="border: none;">
-      </div>
-      <div class="six_twelve ml-1 mr-1 row">
-         <h3>Contact Us</h3>
-         <form action="/action_page.php">
-            <label for="fname">First name:</label><br>
-            <input class="form_inputs"type="text" id="fname" name="fname" value="John" style="width: 120px;"><br>
-            <label for="lname">Last name:</label><br>
-            <input class="form_inputs"type="text" id="lname" name="lname" value="Doe" style="width: 120px;"><br><br>
-            <input class="wide_buttons2"type="submit" value="S U B M I T" style="width: 150px;">
-         </form>
-      </div>
-      <br><br>
-   </div>
-</div>
+
+<%= render(:partial => 'blockies') %>
+<%= render(:partial => 'sign_up') %>
+
 <div class="container">
    <% if !flash[:notice].blank? %>
    <div class="alert"> 

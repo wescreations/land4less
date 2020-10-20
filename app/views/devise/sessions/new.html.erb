@@ -1,4 +1,12 @@
-<h2>Log in</h2>
+<br><br><br><br>
+
+<div class="container2">
+   <div class="row">
+      <div class="three_twelve mr-1" style="border: none;">
+         <%#= render(:partial => 'properties/left') %>
+      </div>
+     <div class="six_twelve ml-1 mr-1 row" style="border-radius: 4px; border: solid 1px gray; padding: 15px; background-color: white;">
+       <h2>Log in</h2><br><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -22,5 +30,12 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+
+     </div>
+      <div class="three_twelve ml-1"  style="border: none;">
+        <%#= render(:partial => 'properties/right') %> 
+      </div>
+   </div>
+   <br>
+</div>

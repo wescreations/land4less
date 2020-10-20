@@ -17,6 +17,9 @@
   @import 'font_awesome_buttons.css';
 @import 'new_slider.css';
 
+body {
+  background-color: #f1f1f1 !important;
+}
 
 h1, h2, h3, h4, h5 {
     font-family: montserrat;
@@ -27,7 +30,55 @@ h5, h6, h4 {
 	font-weight: 600;
 }
 
+.sign_up {
+    width: 100% !important;
+  height: 50px;
+  border: solid 2px #008ABE;
+  background-color: white;
+  border-radius: 1px; 
+color: black;
+padding: 5px;
+}
 
+.submenu1{
+  width: auto; height: auto; padding: 25px; border: solid 1px gray; position: absolute; z-index: 100; background-color: white; border-radius: 4px; margin-top: 2px; margin-right: 2px;   -webkit-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  -moz-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+ transition: all .2s ease-in-out; padding-top: 5px;
+}
+
+.submenu2{
+  width: auto; height: auto; padding: 25px; border: solid 1px gray; position: absolute; z-index: 100; background-color: white; border-radius: 4px; margin-top: 2px; margin-right: 2px;   -webkit-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  -moz-box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+  box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
+ transition: all .2s ease-in-out; padding-top: 5px;
+}
+.center {
+    margin-left: auto; margin-right: auto;
+}
+
+.wide_buttons3 {
+      width: 100% !important;
+  height: 50px;
+  border: solid 2px white;
+  background-color: #008ABE;
+  border-radius: 3px; 
+color: white;
+}
+
+.wide_buttons3:hover {
+  width: 100% !important;
+  height: 50px;
+  border: solid 2px #008ABE;
+  background-color: white;
+  border-radius: 3px; 
+  color: #008ABE;
+  transition: all .5s ease-in-out;
+}
+
+.tab-pane {
+  background-color: white !important;
+}
 
 p {
     font-family: work sans;
@@ -170,7 +221,17 @@ border-bottom-right-radius: 5px;
   height: 390px;
   background-position: center bottom;
   background-repeat: no-repeat;
+  margin-top: -8px;
 }
+
+.bg_sell {
+   background-image: url(LAND.jpg);
+  height: 180px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  margin-top: -8px;
+}
+
 
 .container2 {
   padding: 30px;

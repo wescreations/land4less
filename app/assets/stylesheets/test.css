@@ -11,6 +11,14 @@ img {vertical-align: middle;}
   margin: auto;
 }
 
+li {
+  color: #008ABE !important;
+}
+
+a {
+  color: #008ABE !important;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;

@@ -1,14 +1,5 @@
-
-  <head>
-    <title>Simple Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9mz0wjFGAAAl4mGPb_AiCKBIDg8fuwtw&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <!-- jsFiddle will insert css and js -->
-  </head>
-<p class="navbar-text float-right">
+<br><br><br><br><br><br><br><br><br><br>
+<p >
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -18,18 +9,5 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
-    <div id="map"></div>
-    <p>hi</p>
-<% lat = -30.953401 %> 
-<% long = 125.574842 %> 
-<script>
-  let map;
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: <%= lat %> , lng: <%= long %> },
-    zoom: 8,
-  });
-}
-</script>
 
