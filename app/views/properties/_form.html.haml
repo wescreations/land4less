@@ -1,0 +1,95 @@
+%br/
+%br/
+%br/
+%br/
+%br/
+.row
+  .col-sm-8
+    .form-group{:style => "width: 100%;"}
+      %label Name
+      = f.text_field :name, :class=> 'form-control'
+  .col-sm-4
+    .form-group
+      %label Score
+      = f.number_field :score, :class=> 'form-control'
+.row
+  .col-sm-4
+    %label Age
+    = f.text_field :age, :class=> 'form-control'
+.row
+  .col-sm-4
+    .form-group
+      %label Party
+      = f.select :party, [" ", "Democrat","Republican","Independent"], {}, { class: "form-control" }
+  .col-sm-6
+    .form-group
+      %label Home State
+      = f.select :home_state, [                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+        "", "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor" "Outlying" "Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon, Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" |
+        ], {}, { class: "form-control mr-4  bottom", :placeholder => "search by state..." }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+.row
+  .col-sm-12
+    .form-group{:style => "width: 100%;"}
+      %label Biography
+      = f.text_area :bio, :class=> 'form-control'
+.row
+  .col-sm-12
+    .form-group{:style => "width: 100%;"}
+      %label Udates
+      = f.text_area :updates, :class=> 'form-control'
+.row
+  .col-sm-12
+    %label Office Running For
+.row
+  .col-sm-12
+    .form-group
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+        %input#hii.form-check-input{:name => "calenders", :type => "radio", :value => "calendar_details_b2c"}/
+        %label.form-check-label{:for => "inlineRadio3"} State
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+        %input#hii2.form-check-input{:name => "calenders", :type => "radio", :value => "calendar_details_b2a"}/
+        %label.form-check-label{:for => "inlineRadio3"} National
+.row
+  .col-sm-12{:style => "width: 100%;"}
+    = f.select(:state_race_id, @state_races.map {|n| [n.name, n.id]}, {include_blank: true}, {:class => "form-control"}  )
+  .col-sm-12{:style => "width: 100%;"}
+    = f.select(:national_race_id, @national_races.map {|n| [n.name, n.id]}, {include_blank: true}, {:class => "form-control"} )
+  %br/
+  %br/
+  %br/
+.row
+  .col-sm-6
+    .form-group{:style => "width: 100%;"}
+      %label Democrat Nominee
+      = f.check_box :dem_nom
+  .col-sm-6
+    .form-group{:style => "width: 100%;"}
+      %label Republican Nominee
+      = f.check_box :repub_nom
+.row
+  .col-sm-12
+    %label Current Office
+.row
+  .col-sm-12
+    .form-group
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+        %input#1.form-check-input{:name => "calenders2", :type => "radio", :value => "calendar_details_c2c"}/
+        %label.form-check-label{:for => "inlineRadio3"} State
+      .form-check.form-check-inline.col-sm-3{:style => "width: 100%;"}
+        %input#2.form-check-input{:name => "calenders2", :type => "radio", :value => "calendar_details_c2a"}/
+        %label.form-check-label{:for => "inlineRadio3"} National
+.row
+  .col-sm-12{:style => "width: 100%;"}
+    = f.select(:state_race_id2, @state_races2.map {|n| [n.name, n.id]}, {include_blank: true}, {:class => "form-control"}  )
+  .col-sm-12{:style => "width: 100%;"}
+    = f.select(:national_race_id2, @national_races2.map {|n| [n.name, n.id]}, {include_blank: true}, {:class => "form-control"} )
+  %br/
+  %br/
+  %br/
+.col-sm-5.btn.btn-primary.btn-file
+  CHOOSE PHOTO
+  \#{f.file_field :avatar, :class => "test"}
+%br/
+%br/

@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  */
- @import 'test.css';
-  @import 'font_awesome_buttons.css';
+
+@import 'variables.scss';
+@import 'test.css';
+@import 'font_awesome_buttons.css';
 @import 'new_slider.css';
 
 body {
@@ -23,7 +25,23 @@ body {
 
 h1, h2, h3, h4, h5 {
     font-family: montserrat;
-    color: #008ABE;
+    color: $primaryColor;
+}
+
+.b2 {
+  margin-left: 37%;
+}
+
+.something {
+  border-radius: 4px;
+  border: solid 1px gray;
+  padding: 15px;
+  background-color: white;
+}
+
+.something2 {
+  padding: 15px;
+  background-color: white;
 }
 
 h5, h6, h4 {
@@ -31,13 +49,13 @@ h5, h6, h4 {
 }
 
 .sign_up {
-    width: 100% !important;
+  width: 100% !important;
   height: 50px;
-  border: solid 2px #008ABE;
+  border: solid 2px $primaryColor;
   background-color: white;
-  border-radius: 1px; 
-color: black;
-padding: 5px;
+  border-radius: 1px;
+  color: black;
+  padding: 5px;
 }
 
 .submenu1{
@@ -61,18 +79,18 @@ padding: 5px;
       width: 100% !important;
   height: 50px;
   border: solid 2px white;
-  background-color: #008ABE;
-  border-radius: 3px; 
+  background-color: $primaryColor;
+  border-radius: 3px;
 color: white;
 }
 
 .wide_buttons3:hover {
   width: 100% !important;
   height: 50px;
-  border: solid 2px #008ABE;
+  border: solid 2px $primaryColor;
   background-color: white;
-  border-radius: 3px; 
-  color: #008ABE;
+  border-radius: 3px;
+  color: $primaryColor;
   transition: all .5s ease-in-out;
 }
 
@@ -85,24 +103,24 @@ p {
 }
 
 .primary_button {
-	background-color: #008ABE !important;
+	background-color: $primaryColor !important;
   border-radius: 1px !important;
   color: white !important;
   border: solid 2px white !important;
       font-family: montserrat;
   padding: 7px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .primary_button:hover {
   background-color: white !important;
   border-radius: 1px !important;
-  color:#008ABE !important;
-  border: solid 2px  #008ABE !important;
+  color:$primaryColor !important;
+  border: solid 2px  $primaryColor !important;
         font-family: montserrat;
         padding: 7px;
  transition: all .5s ease-in-out;
- text-decoration: none; 
+ text-decoration: none;
 }
 
 .danger_button {
@@ -112,7 +130,7 @@ p {
   border: solid 2px white !important;
       font-family: montserrat;
   padding: 7px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .danger_button:hover {
@@ -123,7 +141,7 @@ p {
       font-family: montserrat;
   padding: 7px;
 transition: all .5s ease-in-out;
-text-decoration: none; 
+text-decoration: none;
 }
 
 .success_button {
@@ -133,7 +151,7 @@ text-decoration: none;
   border: solid 2px white !important;
       font-family: montserrat;
   padding: 7px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .success_button:hover {
@@ -144,7 +162,7 @@ text-decoration: none;
       font-family: montserrat;
   padding: 7px;
 transition: all .5s ease-in-out;
-text-decoration: none; 
+text-decoration: none;
 }
 
 
@@ -188,13 +206,18 @@ input {
 
   margin-right: auto;
   margin-left: auto;
+  background-color: $primaryColor;
+}
+
+.noborder {
+  border: none;
 }
 
 .border_box {
 border: solid .5px lightgray;
 padding: 20px;
 border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;  
+border-bottom-right-radius: 5px;
 }
 
 .three_twelve {
@@ -207,7 +230,9 @@ border-bottom-right-radius: 5px;
 .six_twelve {
   width: 63%;
   border-radius: 5px;
-
+  height: 500px;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
 .half {
@@ -240,10 +265,10 @@ border-bottom-right-radius: 5px;
 .wide_inputs {
   width: 90% !important;
   height: 50px;
-  border: solid 1px #008ABE;
+  border: solid 1px $primaryColor;
   background-color: white;
-  opacity: .9; 
-  border-radius: 1px; 
+  opacity: .9;
+  border-radius: 1px;
 color: black;
 margin-left: 30px;
 margin-right: 10px;
@@ -253,9 +278,9 @@ padding: 5px;
 .form_inputs {
   width: 90% !important;
   height: 50px;
-  border: solid 1px #008ABE;
+  border: solid 1px $primaryColor;
   background-color: white;
-  border-radius: 1px; 
+  border-radius: 1px;
 color: black;
 margin-right: 10px;
 padding: 5px;
@@ -265,8 +290,8 @@ padding: 5px;
   width: 90% !important;
   height: 50px;
   border: solid 2px white;
-  background-color: #008ABE;
-  border-radius: 3px; 
+  background-color: $primaryColor;
+  border-radius: 3px;
 color: white;
 margin-left: 30px;
 margin-right: 10px;
@@ -276,10 +301,10 @@ margin-right: 10px;
 .wide_buttons:hover {
   width: 90% !important;
   height: 50px;
-  border: solid 2px #008ABE;
+  border: solid 2px $primaryColor;
   background-color: white;
-  border-radius: 3px; 
-color: #008ABE;
+  border-radius: 3px;
+color: $primaryColor;
 margin-left: 30px;
 margin-right: 10px;
  transition: all .5s ease-in-out;
@@ -289,8 +314,8 @@ margin-right: 10px;
   width: 90% !important;
   height: 50px;
   border: solid 2px white;
-  background-color: #008ABE;
-  border-radius: 3px; 
+  background-color: $primaryColor;
+  border-radius: 3px;
 color: white;
 
 }
@@ -298,10 +323,10 @@ color: white;
 .wide_buttons2:hover {
   width: 90% !important;
   height: 50px;
-  border: solid 2px #008ABE;
+  border: solid 2px $primaryColor;
   background-color: white;
-  border-radius: 3px; 
-color: #008ABE;
+  border-radius: 3px;
+color: $primaryColor;
  transition: all .5s ease-in-out;
 }
 
@@ -318,17 +343,17 @@ color: #008ABE;
 
 .cardy {
   width: 100%;
-  border-radius: 5px; 
+  border-radius: 5px;
   height: 200px;
   border: solid 1px gray;
 }
 
 .banner {
-  border: solid 1px blue
+  border: solid 1px blue;
   width: 380px;
   border-radius: 1px;
   background-color: white;
-  opacity: .8; 
+  opacity: .8;
   margin-top: 8%;
   padding: 5px 20px;
   margin-left: 15px;
@@ -338,7 +363,7 @@ color: #008ABE;
 .boxy2 {
 	padding-top: 20px;
 	padding-bottom: 20px;
- border-radius: 1px; 
+ border-radius: 1px;
  border: solid .75px gray;
  width: 100%;
 }
@@ -384,7 +409,7 @@ border-radius: 1px !important;
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #008ABE;
+    background: $primaryColor;
     border-radius: 3px;
     padding: 10px 20px 10px 20px;
     color: white;
@@ -392,15 +417,15 @@ border-radius: 1px !important;
   .digg_pagination a {
     text-decoration: none;
     border-radius: 3px;
-    color: #008ABE;
-    border: 1px solid #008ABE; 
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
     padding: 10px 20px 10px 20px;}
     .digg_pagination a:hover, .digg_pagination a:focus {
       color: #000033;
       background-color: lightgray;
-      border-color: #000033; 
+      border-color: #000033;
       opacity: .5;
-      } 
+      }
 
   .digg_pagination .page_info {
     background: #2e6ab1;
@@ -408,7 +433,7 @@ border-radius: 1px !important;
     padding: 0.4em 0.6em;
     width: 22em;
     margin-bottom: 0.3em;
-    text-align: center; 
+    text-align: center;
     padding: 10px 15px 10px 15px;
     border-radius: 3px}
 

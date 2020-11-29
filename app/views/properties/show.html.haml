@@ -1,0 +1,168 @@
+/ Page Content
+%br/
+%br/
+%br/
+%br/
+%br/
+.container
+  = image_tag @property.main_photo, :class => "swipebox"
+  .row
+    .col-sm-12
+      %h1.mt-4= @property.name
+  .row
+    .col-sm-1
+      %strong
+        %p Price:
+    .col-sm-8
+      %p= @property.price
+  .row
+    .col-sm-1
+      %strong
+        %p Size:
+    .col-sm-8
+      = property_size(@property.size)
+  %ul#myTab.nav.nav-tabs{:role => "tablist"}
+    %li.nav-item{:role => "presentation"}
+      %a#home-tab.nav-link.active{"aria-controls" => "home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#home", :role => "tab"} Details
+    %li.nav-item{:role => "presentation"}
+      %a#profile-tab.nav-link{"aria-controls" => "profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Photos
+    %li.nav-item{:role => "presentation"}
+      %a#contact-tab.nav-link{"aria-controls" => "contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#contact", :role => "tab"} Parcel
+    %li.nav-item{:role => "presentation"}
+      %a#profile-tab-2.nav-link{"aria-controls" => "profile-2", "aria-selected" => "false", "data-toggle" => "tab", :href => "#profile-2", :role => "tab"} Location Map
+    %li.nav-item{:role => "presentation"}
+      %a#contact-tab-2.nav-link{"aria-controls" => "contact-2", "aria-selected" => "false", "data-toggle" => "tab", :href => "#contact-2", :role => "tab"} Contact Owner
+    %li.nav-item{:role => "presentation"}
+      %a#profile-tab-3.nav-link{"aria-controls" => "profile-3", "aria-selected" => "false", "data-toggle" => "tab", :href => "#profile-3", :role => "tab"} Land Details
+  #myTabContent.tab-content
+    #home.tab-pane.fade.show.active.border_box{"aria-labelledby" => "home-tab", :role => "tabpanel"}
+      .row
+        .col-sm-1
+          %strong
+            %p Address:
+        .col-sm-8
+          %p= @property.address_1
+      .row
+        .col-sm-1
+          %strong
+            %p Address 2:
+        .col-sm-8
+          %p= @property.address_2
+      .row
+        .col-sm-1
+          %strong
+            %p City:
+        .col-sm-8
+          %p= @property.city
+      .row
+        .col-sm-1
+          %strong
+            %p State:
+        .col-sm-8
+          %p= @property.state
+      .row
+        .col-sm-1
+          %strong
+            %p Zip:
+        .col-sm-8
+          %p= @property.zip
+      .row
+        .col-sm-1
+          %strong
+            %p APN:
+        .col-sm-8
+          %p= @property.apn
+      .row
+        .col-sm-1
+          %strong
+            %p Monthly Payment:
+        .col-sm-8
+          %p= @property.monthly_payment
+      .row
+        .col-sm-1
+          %strong
+            %p Description:
+        .col-sm-8
+          %p= @property.description
+      .row
+        .col-sm-1
+          %strong
+            %p Latitude:
+        .col-sm-8
+          %p= @property.lat
+      .row
+        .col-sm-1
+          %strong
+            %p Longitude:
+        .col-sm-8
+          %p= @property.long
+    #profile.tab-pane.fade.border_box{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+      .slideshow-container
+        - if @property.photos.attached? == true
+          / 
+          - @property.photos.each do |p|
+            .mySlides.fade.show
+              = image_tag(p, size: "650x450")
+        %a.prev{:onclick => "plusSlides(-1)"} ❮
+        %a.next{:onclick => "plusSlides(1)"} ❯
+      %br/
+    #contact.tab-pane.fade.border_box{"aria-labelledby" => "contact-tab", :role => "tabpanel"} parcel
+    #profile-2.tab-pane.fade.border_box{"aria-labelledby" => "profile-tab-2", :role => "tabpanel"}
+      #map
+    #contact-2.tab-pane.fade.border_box{"aria-labelledby" => "contact-tab-2", :role => "tabpanel"}
+      %p Contact Us Page
+      %p (BILLING AND MONTHLY PAYMENT ADDRESS: Land4Less 18521 E Queen Creek Rd Suite 105-502 Queen Creek, AZ 85142)
+      %p Contact Name: Land4Less Team
+      %p Contact Number (855) LAND4LESS (855-526-3453)
+      %p Contact Number (480) 987-1048 (OPEN M-F 9AM-5PM PST)
+      %p Contact Email info@Land4Less.us
+      %p Physical Address of Office: 2705 S. Alma School Road Suite 11 Chandler, AZ 85286
+      - lat = @property.lat
+      - long = @property.long
+      = puts lat
+    #profile-3.tab-pane.fade.border_box{"aria-labelledby" => "profile-tab-3", :role => "tabpanel"}
+  %br/
+  %br/
+  %br/
+/ /.container
+:javascript
+  var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        let map;
+  
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: #{@property.lat} , lng: #{@property.long}  },
+      zoom: 13,
+    });
+     new google.maps.Marker({
+      position: { lat: #{@property.lat} , lng: #{@property.long}  },
+      map,
+      title: "Hello World!",
+    });
+  
+  }

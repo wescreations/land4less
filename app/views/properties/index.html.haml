@@ -1,0 +1,75 @@
+
+.bg
+  .row
+    .col-sm-6
+      %h1.banner.b2 Search Land Now!
+    .col-sm-3.mt-4
+  .row
+    .three_twelve.noborder
+    .half
+      = form_for "", url: properties_path, role: "search", method: "get" do
+        = search_form_for @q do |f|
+          = f.search_field :name_cont, :placeholder => "Search by name...", :class => "wide_inputs"
+          %br
+          %br
+          = f.select :state_cont, [" ", "Arizona","Texas","California", "New Mexico", "Nevada"], {prompt: "Choose a State..." }, { class: "wide_inputs longtoo"}
+          %br
+          %br
+          = f.select :monthly_payment_cont, [" ", "$129 Per Month","$229 Per Month","$329 Per Month", "$429 Per Month"], {prompt: "Choose a Montly Payment"}, { class: "wide_inputs"}
+          %br
+          %br
+    .half
+      = f.select :price_group_cont, [" ", "$0 - $1,000","$1,001 - $2,500","$2,501 - $5,000", "$5,001 - $7,500", "$7,501 - $10,000","$10,001 - $20,000", "$20,001 - $35,000", "$35,001 - $50,000", "$50,001 - $75,000"], {prompt: "Choose a Price Group..." }, { class: "wide_inputs" }
+      %br
+      %br
+      = f.select :acre_cont, [" ", "0 - .5",".51 - 2","2.01 - 5", "5.01 - 10", "10.01 - 15", "15.01 - 20", "20.01 - 40", "40.01 - 60", "60.01 - 80"], { :prompt => "Search by Size..."}, { class: "wide_inputs"}
+      %br
+      %br
+      = f.submit 'S E A R C H', :class => 'wide_buttons'
+    .three_twelve{:style => "border: none;"}
+.container2
+  .row
+    .three_twelve.mr-1
+      = render(:partial => 'properties/left')
+    .six_twelve.ml-1.mr-1.row
+      - @property.each do |p|
+        .card.mr-2{:style => "width: 14.0rem;"}
+          - if p.main_photo.attached? == true
+            = image_tag p.main_photo
+          - else
+            %img{:alt => "LAND", :border => "0", :src => "https://i.ibb.co/dBmS5Gk/LAND.jpg", :width => "100%"}
+          .card-body
+            %h5.card-title{:style => "font-weight: 600 !important;"}= p.name
+            .row
+              %strong
+                %p.card-text.ml-3 Price:
+              %p= p.price
+            .row
+              %strong
+                %p.card-text.ml-3 Size:
+              %p= p.size
+            .row
+              %strong
+                %p.card-text.ml-3 Description:
+              .ml-3
+                = truncate(p.description, :length => 75)
+              %br/
+            .row
+              = link_to("DETAILS", property_path(p), :class => 'primary_button')
+              %br/
+              %br/
+              - if user_signed_in?
+                = link_to('EDIT', edit_property_path(p), :class => 'danger_button')
+                %br/
+                %br/
+                = link_to('DELETE', delete_property_path(p), :class => 'success_button')
+      .digg_pagination.mt-3
+        = will_paginate @property
+    .three_twelve.ml-1{:style => "padding: 15px; background-color: white;"}
+      = render(:partial => 'properties/right')
+= render(:partial => 'blockies')
+= render(:partial => 'sign_up')
+.container
+  - if !flash[:notice].blank?
+    .alert
+      = flash[:notice]

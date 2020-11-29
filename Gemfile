@@ -34,6 +34,9 @@ gem 'will_paginate', '~> 3.1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# for haml
+gem "haml-rails", "~> 2.0"
+
 # for images
 gem 'paperclip'
 gem 'aws-sdk'

@@ -1,0 +1,84 @@
+%br/
+%br/
+%br/
+%br/
+%br/
+.container
+  = form_for @property do |f|
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label Name
+          = f.text_field :name, :class=> 'form-control'
+      .col-sm-4
+        .form-group
+          %label Price
+          = f.text_field :price, :class=> 'form-control'
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label Address
+          = f.text_field :address_1, :class=> 'form-control'
+      .col-sm-4
+        .form-group
+          %label City
+          = f.text_field :city, :class=> 'form-control'
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label State
+          = f.select :state, [" ", "Arizona","Texas","California", "New Mexico"], {}, { class: "form-control mr-4", :placeholder => "search by name..." }
+      .col-sm-4
+        .form-group
+          %label ZIP
+          = f.text_field :zip, :class=> 'form-control'
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label APN
+          = f.text_field :apn, :class=> 'form-control'
+      .col-sm-4
+        .form-group
+          %label Monthly Payment
+          = f.select :monthly_payment, [" ", "$129 Per Month","$229 Per Month","$329 Per Month", "$429 Per Month"], {}, { class: "form-control mr-4", :placeholder => "search by name..." }
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label Acre
+          = f.select :acre, [" ", "0 - .5",".51 - 2","2.01 - 5", "5.01 - 10", "10.01 - 15", "15.01 - 20", "20.01 - 40", "40.01 - 60", "60.01 - 80"], {}, { class: "form-control mr-4", :placeholder => "search by name..." }
+      .col-sm-4
+        .form-group
+          %label Price Group
+          = f.select :price_group, [" ", "$0 - $1,000","$1,001 - $2,500","$2,501 - $5,000", "$5,001 - $7,500", "$7,501 - $10,000","$10,001 - $20,000", "$20,001 - $35,000", "$35,001 - $50,000", "$50,001 - $75,000"], {}, { class: "form-control mr-4", :placeholder => "search by name..." }
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label Description
+          = f.text_field :description, :class=> 'form-control'
+    .row
+      .col-sm-12
+        .form-group{:style => "width: 100%;"}
+          %label Size
+          = f.text_field :size, :class=> 'form-control'
+    .row
+      .col-sm-8
+        .form-group{:style => "width: 100%;"}
+          %label Latitude
+          = f.text_field :lat, :class=> 'form-control'
+    .row
+      .col-sm-12
+        .form-group{:style => "width: 100%;"}
+          %label Longitude
+          = f.text_field :long, :class=> 'form-control'
+    .row
+      .col-sm-6
+        .form-group{:style => "width: 100%;"}
+          %label Image
+          = f.file_field :main_photo
+      .col-sm-6
+        .form-group{:style => "width: 100%;"}
+          %label Image
+          = f.file_field :photos, multiple: true
+    .modal-footer
+      = f.submit 'CREATE', :class => 'btn btn-primary'
+      %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close

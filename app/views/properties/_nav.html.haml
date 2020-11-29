@@ -1,0 +1,65 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top{:style => "border-bottom: 2px solid #008ABE; background-color: white !important; width: 100%; z-index: 99; opacity: .95; color: #008ABE; margin-bottom: 20px; "}
+  .container
+    %a.navbar-brand{:href => "#"}
+      = link_to image_tag('l4l.jpg', width: '170 ', height: '70'), root_path
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %p#clicky
+      %ul.navbar-nav.ml-auto
+        %li.nav-item.mr-4
+          = link_to "Home", root_path, :class => "nav-link"
+        %li#button1.nav-item.mr-4
+          %p{:style => "font-family: work sans; padding-top: 8px; color: gray; font-size: 17px; font-weight: 500;color: #008ABE;  "}
+            Land
+            %i.fas.fa-caret-down.ml-1
+          .submenu1
+            = link_to "Process", process_path, :class => "nav-link"
+            = link_to "Get Financing", financing_path, :class => "nav-link"
+            = link_to "Make Offer", make_offer_path, :class => "nav-link"
+            = link_to "Sell Your Land", sell_your_land_path, :class => "nav-link"
+        %li#button2.nav-item.mr-4
+          %p{:style => "font-family: work sans; padding-top: 8px; color: gray; font-size: 17px; font-weight: 500;color: #008ABE;  "}
+            Finance
+            %i.fas.fa-caret-down.ml-1
+          .submenu2
+            = link_to "Process", process_path, :class => "nav-link"
+            = link_to "Get Financing", financing_path, :class => "nav-link"
+            = link_to "Make Offer", make_offer_path, :class => "nav-link"
+            = link_to "Sell Your Land", sell_your_land_path, :class => "nav-link"
+        %li.nav-item.mr-4
+          = link_to "FAQ", faq_path, :class => "nav-link"
+        %li.nav-item.mr-4
+          = link_to "About Us", about_us_path, :class => "nav-link"
+        %li.nav-item.mr-4
+          = link_to "Contact Us", contact_path, :class => "nav-link"
+:javascript
+  $( document ).ready(function() {
+
+      $('.submenu1').hide();
+      $('.submenu2').hide();
+
+
+    $('#button1').click(function(){
+      $('.submenu1').toggle();
+    });
+
+    $('#button2').click(function(){
+      $('.submenu2').toggle();
+    });
+
+    let endpoint = 'https://api.linkpreview.net'
+    let apiKey = '5b578yg9yvi8sogirbvegoiufg9v9g579gviuiub8'
+
+      $( ".content a" ).each(function( index, element ) {
+        console.log($( this ).text());
+      $.ajax({
+          url: endpoint + "?key=" + apiKey + " &q=" + $( this ).text(),
+          contentType: "application/json",
+          dataType: 'json',
+          success: function(result){
+              console.log(result);
+          }
+      })
+    });
+  });

@@ -1,0 +1,7 @@
+= render(:partial => 'properties/head')
+= form_for(@property, :method => 'delete') do |f|
+  %p Are you sure you want to delete this?
+  %p= f.object.name
+  .modal-footer
+    = f.submit 'DELETE', :class => 'btn btn-danger'
+    %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
