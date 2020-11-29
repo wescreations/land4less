@@ -1,16 +1,17 @@
 .bg_sell
   .row
     .col-sm-6
-      %h1.banner.b2 Contact Uss
+      %h1.banner.b2 Contact Us
     .col-sm-3
 .container2
   .row
-    .three_twelve.mr-1
+    .col-sm-2.somethingl.ml-5
       = render(:partial => 'properties/left')
-    .six_twelve.ml-1.mr-1.row.something
-    .three_twelve.ml-1.something2
+    .col-sm-7.something.ml-2.mr-2
+      %h1 Contact Us
+      %p here is my super cool paragraph. It's amazing and it's not even that long if I'm being that honest. Goodnight.
+    .col-sm-2.something.mr-2
       = render(:partial => 'properties/right')
-  %br
-  .container
+.container
 = render(:partial => 'properties/blockies')
 = render(:partial => 'properties/sign_up')

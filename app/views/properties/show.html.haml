@@ -1,9 +1,3 @@
-/ Page Content
-%br/
-%br/
-%br/
-%br/
-%br/
 .container
   = image_tag @property.main_photo, :class => "swipebox"
   .row
@@ -99,7 +93,7 @@
     #profile.tab-pane.fade.border_box{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
       .slideshow-container
         - if @property.photos.attached? == true
-          / 
+          /
           - @property.photos.each do |p|
             .mySlides.fade.show
               = image_tag(p, size: "650x450")
@@ -128,32 +122,32 @@
 :javascript
   var slideIndex = 1;
         showSlides(slideIndex);
-        
+
         function plusSlides(n) {
           showSlides(slideIndex += n);
         }
-        
+
         function currentSlide(n) {
           showSlides(slideIndex = n);
         }
-        
+
         function showSlides(n) {
           var i;
           var slides = document.getElementsByClassName("mySlides");
           var dots = document.getElementsByClassName("dot");
-          if (n > slides.length) {slideIndex = 1}    
+          if (n > slides.length) {slideIndex = 1}
           if (n < 1) {slideIndex = slides.length}
           for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
+              slides[i].style.display = "none";
           }
           for (i = 0; i < dots.length; i++) {
               dots[i].className = dots[i].className.replace(" active", "");
           }
-          slides[slideIndex-1].style.display = "block";  
+          slides[slideIndex-1].style.display = "block";
           dots[slideIndex-1].className += " active";
         }
         let map;
-  
+
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: #{@property.lat} , lng: #{@property.long}  },
@@ -164,5 +158,5 @@
       map,
       title: "Hello World!",
     });
-  
+
   }

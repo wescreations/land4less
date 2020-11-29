@@ -39,6 +39,14 @@ h1, h2, h3, h4, h5 {
   background-color: white;
 }
 
+.somethingl {
+  border-radius: 4px;
+  border: solid 1px gray;
+  background-color: white;
+  padding: 0 !important;
+}
+
+
 .something2 {
   padding: 15px;
   background-color: white;
@@ -182,22 +190,6 @@ a .btn-danger {
 	width: 259px !important;
 }
 
-input {
-	        width: 259px !important;
-}
-
-    select:focus {
-        min-width: 259px !important;
-        width: auto !important;
-    }
-
-    select {
-        width: 259px !important;
-    }
-    select:focus {
-        min-width: 259px !important;
-        width: auto !important;
-    }
 
 
 .boxy {
@@ -251,7 +243,7 @@ border-bottom-right-radius: 5px;
 
 .bg_sell {
    background-image: url(LAND.jpg);
-  height: 180px;
+  height: 380px;
   background-position: center bottom;
   background-repeat: no-repeat;
   margin-top: -8px;
@@ -380,6 +372,7 @@ border-radius: 1px !important;
   box-shadow: -1px 3px 17px 0px rgba(138,138,138,0.25) !important;
  transition: all .2s ease-in-out;
  height: auto;
+ width: 16.0rem;
 }
 
 .card:hover {

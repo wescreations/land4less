@@ -1,19 +1,18 @@
-%h3{:style => "text-align: center; font-weight: 600;"} Sign Up for Our Mailing List!
-%br/
-%form{:action => "/action_page.php"}
-  .row
-    .col-sm-3
-    .col-sm-3
-      %input#fname.sign_up{:name => "fname", :placeholder => "Name", :type => "text"}/
-      %br/
-    .col-sm-3
-      %input#lname.sign_up{:name => "lname", :placeholder => "Email", :type => "text"}/
-      %br/
-    .col-sm-3
-  .row
-    .col-sm-3
-    .col-sm-6
-      %input.wide_buttons3{:style => "margin-top: 28px", :type => "submit", :value => "S U B M I T"}/
-    .col-sm-3
-%br/
-%br/
+.container
+  %h3{:style => "text-align: center; font-weight: 600;"} Sign Up for Our Mailing List!
+  %br/
+  %form{:action => "/action_page.php"}
+    .row
+      .col-sm-3
+      .col-sm-3
+        %input#fname.sign_up{:name => "fname", :placeholder => "Name", :type => "text"}/
+        %br/
+      .col-sm-3
+        %input#lname.sign_up{:name => "lname", :placeholder => "Email", :type => "text"}/
+        %br/
+      .col-sm-3
+    .row
+      .col-sm-3
+      .col-sm-6
+        %input.wide_buttons3{:style => "margin-top: 28px", :type => "submit", :value => "S U B M I T"}/
+      .col-sm-3

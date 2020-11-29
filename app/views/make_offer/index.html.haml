@@ -3,14 +3,15 @@
     .col-sm-6
       %h1.banner.b2 Make an Offer
     .col-sm-3
-.row.mt-4
-  .col-sm-2.something.ml-5
-    = render(:partial => 'properties/left')
-  .col-sm-7.something.ml-2.mr-2
-    %h1 Make an Offer!
-    %p here is my super cool paragraph. It's amazing and it's not even that long if I'm being that honest. Goodnight.
-  .col-sm-2.something.mr-2
-    = render(:partial => 'properties/right')
+.container2
+  .row
+    .col-sm-2.somethingl.ml-5
+      = render(:partial => 'properties/left')
+    .col-sm-7.something.ml-2.mr-2
+      %h1 Make an Offer!
+      %p here is my super cool paragraph. It's amazing and it's not even that long if I'm being that honest. Goodnight.
+    .col-sm-2.something.mr-2
+      = render(:partial => 'properties/right')
 .container
 = render(:partial => 'properties/blockies')
 = render(:partial => 'properties/sign_up')
