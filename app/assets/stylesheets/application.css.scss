@@ -23,9 +23,18 @@ body {
   background-color: #f1f1f1 !important;
 }
 
+.card-title {
+  font-weight: 600 !important;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: montserrat;
     color: $primaryColor;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .b2 {
@@ -34,19 +43,38 @@ h1, h2, h3, h4, h5 {
 
 .something {
   border-radius: 4px;
-  border: solid 1px gray;
+  border: none;
   padding: 15px;
+}
+
+.accordion {
+  border: solid 1px $primaryColor;
   background-color: white;
 }
 
 .somethingl {
   border-radius: 4px;
-  border: solid 1px gray;
-  background-color: white;
+  border: none;
   padding: 0 !important;
 }
 
+.somethingr {
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  padding: 17px !important;
+  height: 400px;
 
+}
+
+.navvy {
+  border-bottom: 2px solid #008ABE; background-color: white !important; width: 100%; z-index: 99; opacity: .95; color: #008ABE; margin-bottom: 20px;
+}
+
+
+.pstyle {
+  font-family: work sans; padding-top: 8px; color: gray; font-size: 17px; font-weight: 500;color: #008ABE;
+}
 .something2 {
   padding: 15px;
   background-color: white;
@@ -115,9 +143,10 @@ p {
   border-radius: 1px !important;
   color: white !important;
   border: solid 2px white !important;
-      font-family: montserrat;
+  font-family: montserrat;
   padding: 7px;
   text-decoration: none;
+  height: 45px;
 }
 
 .primary_button:hover {
@@ -129,29 +158,36 @@ p {
         padding: 7px;
  transition: all .5s ease-in-out;
  text-decoration: none;
+ height: 45px;
 }
 
 .danger_button {
-  background-color: #005173 !important;
+  background-color: $darkBlue !important;
   border-radius: 1px !important;
   color: white !important;
   border: solid 2px white !important;
       font-family: montserrat;
   padding: 7px;
   text-decoration: none;
+  height: 45px;
 }
 
 .danger_button:hover {
     background-color: white !important;
   border-radius: 1px !important;
-  color: #005173 !important;
-  border: solid 2px  #005173 !important;
+  color: $darkBlue !important;
+  border: solid 2px  $darkBlue !important;
       font-family: montserrat;
   padding: 7px;
 transition: all .5s ease-in-out;
 text-decoration: none;
+height: 45px;
 }
 
+
+.left_margin {
+  margin-left: 2em;
+}
 .success_button {
   background-color: #005173 !important;
   border-radius: 1px !important;
@@ -160,6 +196,7 @@ text-decoration: none;
       font-family: montserrat;
   padding: 7px;
   text-decoration: none;
+  height: 45px;
 }
 
 .success_button:hover {
@@ -171,6 +208,7 @@ text-decoration: none;
   padding: 7px;
 transition: all .5s ease-in-out;
 text-decoration: none;
+height: 45px;
 }
 
 
@@ -238,7 +276,7 @@ border-bottom-right-radius: 5px;
   height: 390px;
   background-position: center bottom;
   background-repeat: no-repeat;
-  margin-top: -8px;
+  margin-top: 0;
 }
 
 .bg_sell {
@@ -246,18 +284,19 @@ border-bottom-right-radius: 5px;
   height: 380px;
   background-position: center bottom;
   background-repeat: no-repeat;
-  margin-top: -8px;
+  margin-top: -19px !important;
 }
 
 
 .container2 {
   padding: 30px;
+  border: none;
 }
 
 .wide_inputs {
   width: 90% !important;
   height: 50px;
-  border: solid 1px $primaryColor;
+  border: solid 3px $primaryColor;
   background-color: white;
   opacity: .9;
   border-radius: 1px;
@@ -270,7 +309,7 @@ padding: 5px;
 .form_inputs {
   width: 90% !important;
   height: 50px;
-  border: solid 1px $primaryColor;
+  border: solid 3px $primaryColor;
   background-color: white;
   border-radius: 1px;
 color: black;
@@ -333,6 +372,10 @@ color: $primaryColor;
   text-align: center;
 }
 
+.bottom_margin {
+  margin-bottom: 20px;
+}
+
 .cardy {
   width: 100%;
   border-radius: 5px;
@@ -340,16 +383,30 @@ color: $primaryColor;
   border: solid 1px gray;
 }
 
+.b{
+  border: dashed #c73b06 2px;
+}
+
 .banner {
-  border: solid 1px blue;
-  width: 380px;
   border-radius: 1px;
   background-color: white;
   opacity: .8;
-  margin-top: 8%;
-  padding: 5px 20px;
-  margin-left: 15px;
 
+}
+
+.top {
+  margin-top: 60px;
+}
+
+.bottom {
+  margin-bottom: 60px;
+}
+
+.banner2 {
+  border-radius: 1px;
+  background-color: white;
+  opacity: .8;
+  padding: 5px 20px;
 }
 
 .boxy2 {
@@ -375,14 +432,22 @@ border-radius: 1px !important;
  width: 16.0rem;
 }
 
+
+.blockies {
+  padding: 15px; width: 100%; margin-right: 10px; text-align: center; height: 270px;
+}
 .card:hover {
 	-webkit-box-shadow: -1px 3px 29px 4px  rgba(138,138,138,0.35) !important;
   -moz-box-shadow: -1px 3px 29px 4px rgba(138,138,138,0.35) !important;
    box-shadow: -1px 3px 29px 4px rgba(138,138,138,0.35) !important;
-   transform: scale(1.05);
+   transform: scale(1.02);
    border: 1px lightgray solid !important;
 }
 
+
+.center {
+  text-align: center;
+}
 
 
 
@@ -398,18 +463,18 @@ border-radius: 1px !important;
   .digg_pagination .disabled {
     color: #999999;
     border: 1px solid #dddddd;
-    border-radius: 3px }
+    border-radius: 1px }
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
     background: $primaryColor;
-    border-radius: 3px;
+    border-radius: 1px;
     padding: 10px 20px 10px 20px;
     color: white;
     border: 1px solid #2e6ab1; }
   .digg_pagination a {
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 1px;
     color: $primaryColor;
     border: 1px solid $primaryColor;
     padding: 10px 20px 10px 20px;}
@@ -420,6 +485,11 @@ border-radius: 1px !important;
       opacity: .5;
       }
 
+
+.panel {
+  background-color: $primaryColor;
+  color: white;
+}
   .digg_pagination .page_info {
     background: #2e6ab1;
     color: white;

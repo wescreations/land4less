@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top{:style => "border-bottom: 2px solid #008ABE; background-color: white !important; width: 100%; z-index: 99; opacity: .95; color: #008ABE; margin-bottom: 20px; "}
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top.navvy
   .container
     %a.navbar-brand{:href => "#"}
       = link_to image_tag('l4l.jpg', width: '170 ', height: '70'), root_path
@@ -10,7 +10,7 @@
         %li.nav-item.mr-4
           = link_to "Home", root_path, :class => "nav-link"
         %li#button1.nav-item.mr-4
-          %p{:style => "font-family: work sans; padding-top: 8px; color: gray; font-size: 17px; font-weight: 500;color: #008ABE;  "}
+          %p.pstyle
             Land
             %i.fas.fa-caret-down.ml-1
           .submenu1
@@ -19,7 +19,7 @@
             = link_to "Make Offer", make_offer_path, :class => "nav-link"
             = link_to "Sell Your Land", sell_your_land_path, :class => "nav-link"
         %li#button2.nav-item.mr-4
-          %p{:style => "font-family: work sans; padding-top: 8px; color: gray; font-size: 17px; font-weight: 500;color: #008ABE;  "}
+          %p.pstyle
             Finance
             %i.fas.fa-caret-down.ml-1
           .submenu2
@@ -33,12 +33,19 @@
           = link_to "About Us", about_us_path, :class => "nav-link"
         %li.nav-item.mr-4
           = link_to "Contact Us", contact_path, :class => "nav-link"
+        %li.nav-item.mr-4
+          -if user_signed_in?
+            = link_to(destroy_user_session_path, method: :delete) do
+              %i.fa.fa-sign-out
+          -else
+            = link_to(new_user_session_path) do
+              %i.fa.fa-sign-out
+
 :javascript
   $( document ).ready(function() {
 
       $('.submenu1').hide();
       $('.submenu2').hide();
-
 
     $('#button1').click(function(){
       $('.submenu1').toggle();

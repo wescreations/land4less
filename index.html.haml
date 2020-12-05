@@ -17,7 +17,7 @@
               = f.select :acre_cont, acre, { :prompt => "Search by Size..."}, { class: "wide_inputs mt-2"}
               = f.submit 'S E A R C H', :class => 'wide_buttons mt-2'
             .col-sm-2
-.container-fluid
+.container2
   .row
     .col-sm-12.center
       %h3.ml-3
@@ -57,10 +57,10 @@
         = will_paginate @property
     .col-sm-2.somethingr.mr-2.mt-3
       = render(:partial => 'properties/right')
-.container-fluid
+.container
 = render(:partial => 'properties/blockies')
 = render(:partial => 'properties/sign_up')
-.container-fluid
+.container
   - if !flash[:notice].blank?
     .alert
       = flash[:notice]
