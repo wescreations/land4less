@@ -1,2 +1,0 @@
-class FinancingController < ApplicationController
-end
