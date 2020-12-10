@@ -1,4 +1,4 @@
-.bg_sell
+.bg_sell.toppy
   .container2
     = form_for "", url: properties_path, role: "search", method: "get" do
       = search_form_for @q do |f|
@@ -22,10 +22,13 @@
     .col-sm-12.center
       %h3.ml-3
         = pluralize(Property.all.count, 'property')
+        %br/
+        - if user_signed_in?
+          = link_to('Add New Property', new_property_path, :class => 'btn-link')
   .row
-    .col-sm-2.somethingl.ml-5.mt-3
+    .col-lg-2.somethingl.ml-5.mt-3
       = render(:partial => 'properties/left')
-    .col-sm-7.something.ml-2.mr-2.row{:style => "padding: 15px !important;"}
+    .col-lg-7.something.ml-2.mr-2.row{:style => "padding: 15px !important;"}
       .row
         - @property.each do |p|
           .card.mb-2.mr-2.mb-4.ml-3
@@ -34,7 +37,7 @@
             - else
               %img{:alt => "LAND", :border => "0", :src => "https://i.ibb.co/dBmS5Gk/LAND.jpg", :width => "100%"}
             .card-body
-              %h5.card-title= p.name
+              %h5.text-primary= p.name
               .row
                 %strong
                   %p.card-text.ml-3 Price:
@@ -55,7 +58,7 @@
                 = link_to('DELETE', delete_property_path(p), :class => 'success_button')
       .digg_pagination.mt-3
         = will_paginate @property
-    .col-sm-2.somethingr.mr-2.mt-3
+    .col-lg-2.somethingr.mr-2.mt-3
       = render(:partial => 'properties/right')
 .container-fluid
 = render(:partial => 'properties/blockies')

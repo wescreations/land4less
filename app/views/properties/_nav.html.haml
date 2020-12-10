@@ -1,7 +1,7 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top.navvy
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.static-top.navvy.sticky-top
   .container
     %a.navbar-brand{:href => "#"}
-      = link_to image_tag('l4l.jpg', width: '170 ', height: '70'), root_path
+      = link_to image_tag('test.png', width: '210 ', height: '55'), root_path
     %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse
@@ -35,11 +35,11 @@
           = link_to "Contact Us", contact_path, :class => "nav-link"
         %li.nav-item.mr-4
           -if user_signed_in?
-            = link_to(destroy_user_session_path, method: :delete) do
+            = link_to(destroy_user_session_path, method: :delete, :class => "nav-link") do
               %i.fa.fa-sign-out
           -else
             = link_to(new_user_session_path) do
-              %i.fa.fa-sign-out
+              %p sign in
 
 :javascript
   $( document ).ready(function() {
@@ -56,7 +56,7 @@
     });
 
     let endpoint = 'https://api.linkpreview.net'
-    let apiKey = '5b578yg9yvi8sogirbvegoiufg9v9g579gviuiub8'
+    let apiKey = ''
 
       $( ".content a" ).each(function( index, element ) {
         console.log($( this ).text());

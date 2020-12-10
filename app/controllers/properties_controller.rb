@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
 
   before_action :authenticate_user!, :only => [:new, :delete, :destroy, :create, :update, :edit]
 
-	layout 'application'
+	layout "application"
 
 	def new
 		@property = Property.new
@@ -14,7 +14,8 @@ class PropertiesController < ApplicationController
 			flash[:notice] = "Property Created Successfully!"
 			redirect_to(properties_path)
 		else
-			render('new')
+			flash[:notice] = "oof, looks like it didn't work."
+			render("new")
 		end
 	end
 
@@ -25,16 +26,18 @@ class PropertiesController < ApplicationController
 	def update
 		@property = Property.find(params[:id])
 				if @property.update_attributes(properties_params)
-			flash[:notice] = "Property Updated Successfully!"
+			flash[:notice] = "Required Fields Prevented Save!"
 			redirect_to(properties_path)
 		else
-			render('new')
+			redirect_to("new")
 		end
 	end
 
 	def index
 		@q = Property.ransack(params[:q])
 		@property = @q.result(distinct: true).paginate(page: params[:page]).all
+
+
 	end
 
 	def show
@@ -52,7 +55,7 @@ class PropertiesController < ApplicationController
 			flash[:notice] = "Property Destroyed Successfully!"
 			redirect_to(properties_path)
 		else
-			render('new')
+			render("new")
 		end
 	end
 

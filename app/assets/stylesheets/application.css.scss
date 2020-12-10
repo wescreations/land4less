@@ -23,6 +23,26 @@ body {
   background-color: #f1f1f1 !important;
 }
 
+.bottom {
+  margin-bottom:  120px !important;
+}
+
+.bg-primary {
+  background-color: $primaryColor !important;
+}
+
+.bg-danger {
+  background-color: $darkBlue !important;
+}
+
+.text-primary {
+  color: $primaryColor !important;
+}
+
+.text-danger {
+  color: $darkBlue !important;
+}
+
 .card-title {
   font-weight: 600 !important;
 }
@@ -67,8 +87,16 @@ h1, h2, h3, h4, h5 {
 
 }
 
+.z2 {
+  z-index: 10;
+}
+
+.z1 {
+  z-index: 9;
+}
+
 .navvy {
-  border-bottom: 2px solid #008ABE; background-color: white !important; width: 100%; z-index: 99; opacity: .95; color: #008ABE; margin-bottom: 20px;
+  border-bottom: 2px solid #008ABE; background-color: white !important; width: 100%; z-index: 1000; opacity: .95; color: #008ABE; margin-bottom: 20px;
 }
 
 
@@ -186,7 +214,8 @@ height: 45px;
 
 
 .left_margin {
-  margin-left: 2em;
+  margin-left: 2.2em;
+  padding: 10px;
 }
 .success_button {
   background-color: #005173 !important;
@@ -434,7 +463,7 @@ border-radius: 1px !important;
 
 
 .blockies {
-  padding: 15px; width: 100%; margin-right: 10px; text-align: center; height: 270px;
+  padding: 15px; width: 16 rem; margin-right: 10px; text-align: center; height: auto;
 }
 .card:hover {
 	-webkit-box-shadow: -1px 3px 29px 4px  rgba(138,138,138,0.35) !important;

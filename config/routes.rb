@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 end
 
-   root to: 'properties#index'
+  root to: 'properties#index'
 	get 'contact' => 'contact#index'
 	get 'about_us' => 'about_us#index'
 	get 'faq' => 'faq#index'

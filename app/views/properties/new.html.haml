@@ -4,6 +4,8 @@
 %br/
 %br/
 .container
+  - if notice
+    = notice
   = form_for @property, html: { multipart: true } do |f|
     .row
       .col-sm-8
