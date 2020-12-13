@@ -1028,7 +1028,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    erubi (1.9.0)
+    erubi (1.10.0)
     erubis (2.7.0)
     ffi (1.13.1-x64-mingw32)
     globalid (0.4.2)
@@ -1052,7 +1052,7 @@ GEM
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
-    loofah (2.7.0)
+    loofah (2.8.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -1161,7 +1161,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.7)
+    tzinfo (1.2.8)
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
@@ -1186,7 +1186,7 @@ GEM
     will_paginate (3.1.8)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   x64-mingw32
@@ -1206,6 +1206,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   ransack
+  responders
   sass-rails (>= 6)
   selenium-webdriver
   turbolinks (~> 5)

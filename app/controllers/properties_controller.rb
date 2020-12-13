@@ -4,30 +4,34 @@ class PropertiesController < ApplicationController
 
 	layout "application"
 
+  respond_to :html, :json
+
 	def new
 		@property = Property.new
+    respond_modal_with @property
 	end
 
 	def create
 		@property = Property.new(properties_params)
 		if @property.save
 			flash[:notice] = "Property Created Successfully!"
-			redirect_to(properties_path)
+      redirect_to(properties_path)
 		else
-			flash[:notice] = "oof, looks like it didn't work."
+			flash[:error] = @property.errors.full_messages.to_sentence
 			render("new")
 		end
 	end
 
 	def edit
 		@property = Property.find(params[:id])
+    respond_modal_with @property
 	end
 
 	def update
 		@property = Property.find(params[:id])
-				if @property.update_attributes(properties_params)
-			flash[:notice] = "Required Fields Prevented Save!"
-			redirect_to(properties_path)
+		if @property.update_attributes(properties_params)
+			    flash[:notice] = "Required Fields Prevented Save!"
+			  redirect_to(properties_path)
 		else
 			redirect_to("new")
 		end
@@ -36,18 +40,19 @@ class PropertiesController < ApplicationController
 	def index
 		@q = Property.ransack(params[:q])
 		@property = @q.result(distinct: true).paginate(page: params[:page]).all
-
-
 	end
 
 	def show
 		@property = Property.find(params[:id])
 		@q = Property.ransack(params[:q])
 		@prop = @q.result(distinct: true).all
+    @related_properties = Property.where(:state => @property.state, :for_sale => @property.for_sale)
+
 	end
 
 	def delete
 		@property = Property.find(params[:id])
+    respond_modal_with @property
 	end
 
 	def destroy
@@ -76,6 +81,7 @@ class PropertiesController < ApplicationController
 			:acre,
 			:description,
 			:main_photo,
+      :for_sale,
 			photos: []
 		)
 	end

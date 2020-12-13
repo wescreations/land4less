@@ -10,13 +10,21 @@
             .col-sm-2
             .col-sm-4.ml-5
               = f.search_field :name_cont, :placeholder => "Search by name...", :class => "wide_inputs"
-              = f.select :state_cont, states, {prompt: "Choose a State..." }, { class: "wide_inputs longtoo mt-2"}
+              = f.select :state_cont, states, {prompt: "All States" }, { class: "wide_inputs longtoo mt-2"}
               = f.select :monthly_payment_cont, monthly, {prompt: "Choose a Montly Payment"}, { class: "wide_inputs mt-2"}
             .col-sm-4
-              = f.select :price_group_cont, price_group, {prompt: "Choose a Price Group..." }, { class: "wide_inputs" }
-              = f.select :acre_cont, acre, { :prompt => "Search by Size..."}, { class: "wide_inputs mt-2"}
+              = f.select :price_group_cont, price_group, {prompt: "All Price Groups" }, { class: "wide_inputs" }
+              = f.select :acre_cont, acre, { :prompt => "All Sizes"}, { class: "wide_inputs mt-2"}
               = f.submit 'S E A R C H', :class => 'wide_buttons mt-2'
             .col-sm-2
+.container-fluid
+  - if !flash[:error].blank?
+    .alert.alert-danger{:role => "alert"}
+      = flash[:error]
+  - if !flash[:notice].blank?
+    .alert.alert-success{:role => "alert"}
+      = flash[:notice]
+
 .container-fluid
   .row
     .col-sm-12.center
@@ -24,20 +32,28 @@
         = pluralize(Property.all.count, 'property')
         %br/
         - if user_signed_in?
-          = link_to('Add New Property', new_property_path, :class => 'btn-link')
+          = link_to 'Add New Property', new_property_path, :class => 'btn-link'
   .row
     .col-lg-2.somethingl.ml-5.mt-3
       = render(:partial => 'properties/left')
     .col-lg-7.something.ml-2.mr-2.row{:style => "padding: 15px !important;"}
       .row
-        - @property.each do |p|
-          .card.mb-2.mr-2.mb-4.ml-3
+        - @property.abc.least_expensive.each do |p|
+          .card.mb-2.mr-2.mb-4.ml-3{:style => "overflow: hidden;"}
+            .div
             - if p.main_photo.attached? == true
               = image_tag p.main_photo
+              - if p.for_sale == true
+              - else
+                %h1.badge S O L D
             - else
               %img{:alt => "LAND", :border => "0", :src => "https://i.ibb.co/dBmS5Gk/LAND.jpg", :width => "100%"}
             .card-body
-              %h5.text-primary= p.name
+              %h5= p.name
+              .row
+                %strong
+                  %p.card-text.ml-3 State:
+                %p= p.state
               .row
                 %strong
                   %p.card-text.ml-3 Price:
@@ -63,7 +79,3 @@
 .container-fluid
 = render(:partial => 'properties/blockies')
 = render(:partial => 'properties/sign_up')
-.container-fluid
-  - if !flash[:notice].blank?
-    .alert
-      = flash[:notice]

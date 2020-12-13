@@ -1,5 +1,16 @@
 .container
-  = image_tag @property.main_photo, :class => "swipebox"
+  - if !flash[:error].blank?
+    .alert.alert-danger{:role => "alert"}
+      = flash[:error]
+  - if !flash[:notice].blank?
+    .alert.alert-success{:role => "alert"}
+      = flash[:notice]
+  .row
+    .col-sm-9
+      = image_tag @property.main_photo, :class => "swipebox"
+    .col-sm-3
+      - if user_signed_in?
+        = link_to('EDIT PROPERTY', edit_property_path(@property), :class => 'danger_button ml-3')
   .row
     .col-sm-12
       %h1.mt-4= @property.name
@@ -118,6 +129,44 @@
   %br/
   %br/
   %br/
+  .row
+    %h3 Related Listings
+  .row
+    - @related_properties.least_expensive.each do |p|
+      - if @property == p
+      - else
+        .card.mb-2.mr-2.mb-4.ml-3
+          - if p.main_photo.attached? == true
+            = image_tag p.main_photo
+            - if p.for_sale == true
+              %p For Sale
+          - else
+            %img{:alt => "LAND", :border => "0", :src => "https://i.ibb.co/dBmS5Gk/LAND.jpg", :width => "100%"}
+          .card-body
+            %h5= p.name
+            .row
+              %strong
+                %p.card-text.ml-3 State:
+              %p= p.state
+            .row
+              %strong
+                %p.card-text.ml-3 Price:
+              %p= p.price
+            .row
+              %strong
+                %p.card-text.ml-3 Size:
+              %p= p.size
+            .row
+              %strong
+                %p.card-text.ml-3 Description:
+              .ml-3
+                = truncate(p.description, :length => 75)
+          .card-body.row
+            = link_to("DETAILS", property_path(p), :class => 'primary_button')
+            - if user_signed_in?
+              = link_to('EDIT', edit_property_path(p), :class => 'danger_button')
+              = link_to('DELETE', delete_property_path(p), :class => 'success_button')
+
 / /.container
 :javascript
   var slideIndex = 1;
