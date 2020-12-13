@@ -2,9 +2,13 @@
   - if !flash[:error].blank?
     .alert.alert-danger{:role => "alert"}
       = flash[:error]
+      .close_time
+        %i.fas.fa-times
   - if !flash[:notice].blank?
     .alert.alert-success{:role => "alert"}
       = flash[:notice]
+      .close
+        %i.fas.fa-times
   .add_edit
     %h4 Add a New Property
     = form_for @property, remote: request.xhr?, html: { data: { modal: true } } do |f|
@@ -15,3 +19,13 @@
       .modal-footer
         = f.submit 'CREATE', :class => 'primary_button'
         %button.danger_button{"data-dismiss" => "modal", type: "button"} Close
+
+:javascript
+  $(document).ready(function() {
+    $(".close_time").on('click', function (event){
+       $('.alert-danger').hide();
+       });
+    $(".close").on('click', function (event){
+       $('.alert-success').hide();
+       });
+     });

@@ -21,9 +21,13 @@
   - if !flash[:error].blank?
     .alert.alert-danger{:role => "alert"}
       = flash[:error]
+      .close_time
+        %i.fas.fa-times
   - if !flash[:notice].blank?
     .alert.alert-success{:role => "alert"}
       = flash[:notice]
+      .close
+        %i.fas.fa-times
 
 .container-fluid
   .row
@@ -79,3 +83,13 @@
 .container-fluid
 = render(:partial => 'properties/blockies')
 = render(:partial => 'properties/sign_up')
+
+:javascript
+  $(document).ready(function() {
+    $(".close_time").on('click', function (event){
+       $('.alert-danger').hide();
+       });
+    $(".close").on('click', function (event){
+       $('.alert-success').hide();
+       });
+     });

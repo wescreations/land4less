@@ -30,10 +30,11 @@ class PropertiesController < ApplicationController
 	def update
 		@property = Property.find(params[:id])
 		if @property.update_attributes(properties_params)
-			    flash[:notice] = "Required Fields Prevented Save!"
-			  redirect_to(properties_path)
+      flash[:notice] = "Property Updated Successfully!"
+      redirect_to(properties_path)
 		else
-			redirect_to("new")
+      flash[:error] = @property.errors.full_messages.to_sentence
+			render("new")
 		end
 	end
 

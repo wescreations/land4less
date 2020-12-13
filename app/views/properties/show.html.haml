@@ -2,9 +2,13 @@
   - if !flash[:error].blank?
     .alert.alert-danger{:role => "alert"}
       = flash[:error]
+      .close_time
+        %i.fas.fa-times
   - if !flash[:notice].blank?
     .alert.alert-success{:role => "alert"}
       = flash[:notice]
+      .close
+        %i.fas.fa-times
   .row
     .col-sm-9
       = image_tag @property.main_photo, :class => "swipebox"
@@ -209,3 +213,13 @@
     });
 
   }
+
+  :javascript
+    $(document).ready(function() {
+      $(".close_time").on('click', function (event){
+         $('.alert-danger').hide();
+         });
+      $(".close").on('click', function (event){
+         $('.alert-success').hide();
+         });
+       });
